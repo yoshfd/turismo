@@ -1,14 +1,1000 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ruta del Aventurero - Deportes y Naturaleza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            color: #2c5e1a;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #4CAF50;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #388E3C;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(44, 94, 26, 0.95);
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #FFC107;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #FFC107;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+        
+        /* Sobre Nosotros */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Actividades */
+        .activities {
+            background-color: #f0f8f1;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .activity-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .activity-card:hover .activity-img img {
+            transform: scale(1.1);
+        }
+        
+        .activity-content {
+            padding: 20px;
+        }
+        
+        .activity-content h3 {
+            margin-bottom: 10px;
+            color: #2c5e1a;
+        }
+        
+        /* Galería */
+        .gallery {
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 94, 26, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item .overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Publicidad */
+        .ad-section {
+            background: linear-gradient(to right, #2c5e1a, #4CAF50);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .ad-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .ad-container h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .ad-container h2:after {
+            background: #FFC107;
+        }
+        
+        .ad-container p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .ad-btn {
+            background: #FFC107;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .ad-btn:hover {
+            background: #FFA000;
+        }
+        
+        /* Testimonios */
+        .testimonials {
+            background-color: #f0f8f1;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+        
+        .testimonials-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .testimonial {
+            scroll-snap-align: start;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-name {
+            font-weight: bold;
+            color: #2c5e1a;
+        }
+        
+        .testimonial-rating {
+            color: #FFC107;
+            margin-top: 5px;
+        }
+        
+        /* Contacto */
+        .contact {
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a3a11;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: #FFC107;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: #4CAF50;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #4CAF50;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <!-- Header con menú de navegación -->
+    <header>
+        <nav>
+            <div class="container nav-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-tree"></i>
+                    La Ruta del Aventurero
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#activities">Actividades</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#testimonials">Testimonios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Descubre la Aventura en la Naturaleza</h1>
+            <p>Un paraíso para los amantes de los deportes extremos y la naturaleza virgen. Vive experiencias inolvidables en un entorno único.</p>
+            <a href="#activities" class="btn">Explorar Actividades</a>
+        </div>
+        
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </header>
+    
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Nuestro Refugio Natural</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>La Ruta del Aventurero es un espacio único dedicado a la práctica de deportes al aire libre y al disfrute de la naturaleza en su estado más puro. Ubicado en el corazón de la Sierra Verde, nuestro complejo abarca más de 200 hectáreas de bosques, ríos y montañas.</p>
+                    <p>Fundado en 2010 por un grupo de amantes de la naturaleza, nuestra misión es conectar a las personas con el entorno natural a través de actividades deportivas responsables y educativas. Contamos con guías certificados y equipos de última generación para garantizar tu seguridad.</p>
+                    <p>Ofrecemos experiencias para todos los niveles, desde principiantes hasta atletas expertos, en un ambiente familiar y seguro. Nuestro compromiso con la sostenibilidad nos ha llevado a implementar prácticas ecoamigables en todas nuestras operaciones.</p>
+                    <a href="#contact" class="btn">Reserva tu Aventura</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-4.0.3" alt="Entorno natural de La Ruta del Aventurero">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Actividades -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <h2>Nuestras Aventuras</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-img">
+                        <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?ixlib=rb-4.0.3" alt="Rappel">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Rappel en Cascadas</h3>
+                        <p>Desciende por impresionantes cascadas de hasta 50 metros de altura con nuestros guías expertos. Equipo de seguridad incluido.</p>
+                        <p><strong>Dificultad:</strong> Media-Alta</p>
+                        <p><strong>Duración:</strong> 3 horas</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-img">
+                        <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-4.0.3" alt="Ciclismo de Montaña">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Ciclismo de Montaña</h3>
+                        <p>Recorre nuestros senderos especialmente diseñados para MTB. Rutas para todos los niveles, desde principiantes hasta expertos.</p>
+                        <p><strong>Dificultad:</strong> Variable</p>
+                        <p><strong>Duración:</strong> 2-5 horas</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-img">
+                        <img src="https://images.unsplash.com/photo-1534188753412-3e9336736ed8?ixlib=rb-4.0.3" alt="Senderismo">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Senderismo Guiado</h3>
+                        <p>Descubre la flora y fauna local con nuestras rutas de senderismo interpretativo. Ideal para familias y grupos escolares.</p>
+                        <p><strong>Dificultad:</strong> Baja-Media</p>
+                        <p><strong>Duración:</strong> 2-4 horas</p>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-img">
+                        <img src="https://images.unsplash.com/photo-1605548230624-8d2e0412b98b?ixlib=rb-4.0.3" alt="Tirolesa">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Circuito de Tirolesas</h3>
+                        <p>Vuela sobre el dosel del bosque en nuestro circuito de 8 tirolesas interconectadas. Emoción garantizada para toda la familia.</p>
+                        <p><strong>Dificultad:</strong> Baja</p>
+                        <p><strong>Duración:</strong> 2 horas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Publicidad -->
+    <section class="ad-section">
+        <div class="container ad-container">
+            <h2>¡Oferta Especial de Verano!</h2>
+            <p>Reserva tu paquete de aventura de 3 días y 2 noches con un 25% de descuento. Incluye alojamiento en cabañas ecológicas, todas las comidas y acceso ilimitado a actividades.</p>
+            <p>Válido hasta el 31 de Agosto. No incluye equipo especializado.</p>
+            <a href="#contact" class="btn ad-btn">Reservar Ahora</a>
+        </div>
+    </section>
+    
+    <!-- Galería de Imágenes -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Nuestro Paraíso Natural</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3" alt="Montañas">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-4.0.3" alt="Cascada">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3" alt="Bosque">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3" alt="Paisaje">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-4.0.3" alt="Atardecer">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3" alt="Río">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonios -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Lo Que Dicen Nuestros Aventureros</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="María López">
+                        </div>
+                        <div>
+                            <div class="testimonial-name">María López</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"La experiencia de rappel fue increíble. Los guías son profesionales y te hacen sentir seguro en todo momento. Definitivamente volveré para probar el circuito de tirolesas."</p>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos Martínez">
+                        </div>
+                        <div>
+                            <div class="testimonial-name">Carlos Martínez</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Las rutas de ciclismo de montaña son espectaculares. Bien señalizadas y con diferentes niveles de dificultad. El paisaje es simplemente impresionante. ¡Recomendado 100%!"</p>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Rodríguez">
+                        </div>
+                        <div>
+                            <div class="testimonial-name">Ana Rodríguez</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Llevamos a los niños de excursión escolar y fue maravilloso. Aprendieron mucho sobre la naturaleza y se divirtieron con las actividades. Los guías son excelentes con los niños."</p>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Jorge Sánchez">
+                        </div>
+                        <div>
+                            <div class="testimonial-name">Jorge Sánchez</div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"El paquete de 3 días valió cada centavo. Las cabañas son cómodas y la comida excelente. Las actividades bien organizadas y con buen ritmo. Volveré con amigos el próximo verano."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Reserva tu Aventura</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Km 12, Carretera Sierra Verde, Valle Esmeralda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+34 912 345 678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@larutadelaventurero.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario</h3>
+                            <p>Lunes a Viernes: 8:00 - 20:00</p>
+                            <p>Sábados y Domingos: 7:00 - 22:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="reservationForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="activity">Actividad de interés</label>
+                            <select id="activity" required>
+                                <option value="">Selecciona una actividad</option>
+                                <option value="rappel">Rappel en Cascadas</option>
+                                <option value="cycling">Ciclismo de Montaña</option>
+                                <option value="hiking">Senderismo Guiado</option>
+                                <option value="zipline">Circuito de Tirolesas</option>
+                                <option value="package">Paquete Completo</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Fecha preferida</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje adicional</label>
+                            <textarea id="message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar Reserva</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>La Ruta del Aventurero</h3>
+                    <p>Tu destino para deportes de aventura y conexión con la naturaleza. Ofrecemos experiencias únicas en un entorno natural protegido.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#activities">Actividades</a></li>
+                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Actividades</h3>
+                    <ul>
+                        <li><a href="#">Rappel</a></li>
+                        <li><a href="#">Ciclismo de Montaña</a></li>
+                        <li><a href="#">Senderismo</a></li>
+                        <li><a href="#">Tirolesas</a></li>
+                        <li><a href="#">Campamentos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Boletín Informativo</h3>
+                    <p>Suscríbete para recibir ofertas especiales y novedades.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Tu email" required>
+                        </div>
+                        <button type="submit" class="btn">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 La Ruta del Aventurero. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Animación para el desplazamiento suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Manejo del formulario
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí iría la lógica para enviar el formulario
+            // En este ejemplo, simplemente mostramos una alerta
+            alert('¡Gracias por tu reserva! Te contactaremos en breve para confirmar los detalles.');
+            
+            // Limpiar el formulario
+            this.reset();
+        });
+        
+        // Cambiar automáticamente los testimonios
+        let testimonialIndex = 0;
+        const testimonials = document.querySelector('.testimonials-container');
+        
+        function scrollTestimonials() {
+            testimonialIndex = (testimonialIndex + 1) % 4;
+            testimonials.scrollTo({
+                left: testimonialIndex * 330,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Cambiar testimonio cada 5 segundos
+        setInterval(scrollTestimonials, 5000);
+        
+        // Animación para elementos al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Observar las secciones
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in');
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>

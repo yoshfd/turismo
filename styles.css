@@ -1,0 +1,118 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  header {
+    background-color: #006400;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  nav {
+    background-color: #228B22;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .seccion {
+    padding: 2rem;
+    text-align: center;
+    background-color: white;
+    margin: 1rem auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .seccion img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+  
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .galeria img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .galeria img:hover {
+    transform: scale(1.05);
+  }
+  
+  .anuncio {
+    background-color: #ffeeba;
+    padding: 1rem;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    background-color: #006400;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #004d00;
+  }
+  
+  .oculto {
+    display: none;
+    background-color: #d4edda;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+  }
+  /* Add styles here */
